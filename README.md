@@ -1,0 +1,1 @@
+This is a 3D first person clone of an old arcade-style fast-pased shooter game. It was developed as a prototype proof of concept, so everything (walls, player, bullets, enemies, etc.) are made up of primitives (cube, sphere, cylinder, etc.)
