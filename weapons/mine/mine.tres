@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://dob76206d038g"]
+
+[ext_resource type="Script" uid="uid://077mjeqbs562" path="res://weapons/WeaponResource.gd" id="1_tfi2t"]
+[ext_resource type="PackedScene" uid="uid://c87g4gvd46byi" path="res://weapons/mine/mine_visual.tscn" id="2_tt4yf"]
+
+[resource]
+script = ExtResource("1_tfi2t")
+weapon_name = "Mine"
+display_text = "MINE"
+weapon_visual_scene = ExtResource("2_tt4yf")
+metadata/_custom_type_script = "uid://077mjeqbs562"

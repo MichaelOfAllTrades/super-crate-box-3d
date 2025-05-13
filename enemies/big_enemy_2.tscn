@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cl52r4mhxwlad"]
+
+[ext_resource type="Script" uid="uid://goj0mhngcins" path="res://enemies/big_enemy_2.gd" id="1_38o34"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_erif6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_38o34"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_grsi3"]
+material = SubResource("StandardMaterial3D_38o34")
+
+[node name="big_enemy_2" type="CharacterBody3D"]
+disable_mode = 1
+collision_layer = 4
+collision_mask = 49
+script = ExtResource("1_38o34")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_erif6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_grsi3")

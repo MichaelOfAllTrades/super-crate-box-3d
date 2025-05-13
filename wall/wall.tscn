@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bss7arnahqsml"]
+
+[ext_resource type="Script" uid="uid://cpmdii1wofstk" path="res://wall/wall.gd" id="1_xxgf6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_oh6kn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xxgf6"]
+
+[node name="Wall" type="StaticBody3D"]
+collision_mask = 54
+script = ExtResource("1_xxgf6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_oh6kn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_xxgf6")

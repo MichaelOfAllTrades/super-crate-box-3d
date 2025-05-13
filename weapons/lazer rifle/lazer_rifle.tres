@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://d5rtrya2i4ai"]
+
+[ext_resource type="Script" uid="uid://077mjeqbs562" path="res://weapons/WeaponResource.gd" id="1_wsjkc"]
+[ext_resource type="PackedScene" uid="uid://drc6j76gxn1q0" path="res://weapons/lazer rifle/lazer_rifle_visual.tscn" id="2_ojhpm"]
+
+[resource]
+script = ExtResource("1_wsjkc")
+weapon_name = "Lazer Rifle"
+display_text = "LAZER RIFLE"
+weapon_visual_scene = ExtResource("2_ojhpm")
+metadata/_custom_type_script = "uid://077mjeqbs562"

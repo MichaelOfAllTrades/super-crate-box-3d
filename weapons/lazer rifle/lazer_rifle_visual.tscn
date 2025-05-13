@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://drc6j76gxn1q0"]
+
+[ext_resource type="PackedScene" uid="uid://bpsq8dr0dh6cu" path="res://weapons/weapon_visual.tscn" id="1_ios4n"]
+[ext_resource type="Script" uid="uid://kjk6syek0116" path="res://weapons/lazer rifle/LazerRifleWeapon.gd" id="2_jthbp"]
+[ext_resource type="PackedScene" uid="uid://6y2k8sjrnjeb" path="res://weapons/lazer rifle/lazer segment.tscn" id="3_3w8rq"]
+[ext_resource type="PackedScene" uid="uid://c4j21rt2tiw8e" path="res://weapons/lazer rifle/lazer_tip.tscn" id="4_2e75p"]
+
+[node name="WeaponVisual" instance=ExtResource("1_ios4n")]
+
+[node name="WeaponLogic" parent="." index="3"]
+script = ExtResource("2_jthbp")
+segment_scene = ExtResource("3_3w8rq")
+tip_mesh_scene = ExtResource("4_2e75p")
+segment_count = 85
+segment_spacing = 2.0
+fire_rate = 0.8

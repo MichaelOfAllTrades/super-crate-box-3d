@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dp5xlxowaur1w"]
+
+[ext_resource type="Script" uid="uid://hge10y865b2" path="res://weapons/shotgun/shotgun_bullet.gd" id="1_baoy2"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1o2pu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgblk"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_t8pl2"]
+material = SubResource("StandardMaterial3D_jgblk")
+
+[node name="ShotgunBullet" type="Area3D"]
+collision_layer = 16
+collision_mask = 5
+script = ExtResource("1_baoy2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_1o2pu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_t8pl2")

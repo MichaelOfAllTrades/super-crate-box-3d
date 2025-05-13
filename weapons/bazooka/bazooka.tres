@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://ctkvjmm0wht3v"]
+
+[ext_resource type="Script" uid="uid://077mjeqbs562" path="res://weapons/WeaponResource.gd" id="1_55314"]
+[ext_resource type="PackedScene" uid="uid://jks7pl5614ja" path="res://weapons/bazooka/bazooka_visual.tscn" id="2_bhrqm"]
+
+[resource]
+script = ExtResource("1_55314")
+weapon_name = "Bazooka"
+display_text = "BAZOOKA"
+weapon_visual_scene = ExtResource("2_bhrqm")
+metadata/_custom_type_script = "uid://077mjeqbs562"

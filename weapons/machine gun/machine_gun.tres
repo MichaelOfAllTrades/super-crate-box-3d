@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://ptqfyl2ix3rj"]
+
+[ext_resource type="Script" uid="uid://077mjeqbs562" path="res://weapons/WeaponResource.gd" id="1_n7swj"]
+[ext_resource type="PackedScene" uid="uid://c8rkqqd7tjwev" path="res://weapons/machine gun/machine_gun_visual.tscn" id="2_vhdyp"]
+
+[resource]
+script = ExtResource("1_n7swj")
+weapon_name = "Machine Gun"
+display_text = "MACHINE GUN"
+weapon_visual_scene = ExtResource("2_vhdyp")
+metadata/_custom_type_script = "uid://077mjeqbs562"

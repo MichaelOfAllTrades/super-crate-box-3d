@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://c87g4gvd46byi"]
+
+[ext_resource type="PackedScene" uid="uid://bpsq8dr0dh6cu" path="res://weapons/weapon_visual.tscn" id="1_6v5o5"]
+[ext_resource type="Script" uid="uid://bmujamhxh6ssf" path="res://weapons/mine/MineWeapon.gd" id="2_dn7ma"]
+[ext_resource type="PackedScene" uid="uid://cm7sqamxnqav6" path="res://weapons/mine/mine_shadow.tscn" id="3_rf7gj"]
+[ext_resource type="PackedScene" uid="uid://eslqnrfbhvyy" path="res://weapons/mine/mine_deployed.tscn" id="4_ypnmg"]
+[ext_resource type="PackedScene" uid="uid://dwu78f73ja1hs" path="res://weapons/explosion.tscn" id="5_blq10"]
+
+[node name="WeaponVisual" instance=ExtResource("1_6v5o5")]
+
+[node name="WeaponLogic" parent="." index="3"]
+script = ExtResource("2_dn7ma")
+mine_shadow_scene = ExtResource("3_rf7gj")
+mine_deployed_scene = ExtResource("4_ypnmg")
+explosion_scene = ExtResource("5_blq10")
+fire_rate = 1.0
+must_reclick = false

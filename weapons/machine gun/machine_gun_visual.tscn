@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8rkqqd7tjwev"]
+
+[ext_resource type="PackedScene" uid="uid://bpsq8dr0dh6cu" path="res://weapons/weapon_visual.tscn" id="1_mav57"]
+[ext_resource type="Script" uid="uid://cutfthdloaion" path="res://weapons/machine gun/MachineGunWeapon.gd" id="2_urtw8"]
+[ext_resource type="PackedScene" uid="uid://cdeiblgklose" path="res://weapons/bullet.tscn" id="3_e88pr"]
+
+[node name="WeaponVisual" instance=ExtResource("1_mav57")]
+
+[node name="WeaponLogic" parent="." index="3"]
+script = ExtResource("2_urtw8")
+bullet_scene = ExtResource("3_e88pr")
+fire_rate = 0.05
+must_reclick = false

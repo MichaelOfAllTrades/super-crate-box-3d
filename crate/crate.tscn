@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfaos2jci8wwu"]
+
+[ext_resource type="Script" uid="uid://dinwpsgcmck4p" path="res://crate/crate.gd" id="1_uep05"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4417n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uep05"]
+albedo_color = Color(0.545098, 0.270588, 0.0745098, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_uep05"]
+material = SubResource("StandardMaterial3D_uep05")
+
+[node name="Crate" type="CharacterBody3D"]
+collision_layer = 8
+script = ExtResource("1_uep05")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_4417n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_4417n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_uep05")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

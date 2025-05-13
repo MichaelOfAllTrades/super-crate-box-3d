@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://6sh4q3tsfrl6"]
+
+[ext_resource type="Script" uid="uid://077mjeqbs562" path="res://weapons/WeaponResource.gd" id="1_q1vfs"]
+[ext_resource type="PackedScene" uid="uid://cix58neh4hnnb" path="res://weapons/shotgun/shotgun_visual.tscn" id="2_ga4yj"]
+
+[resource]
+script = ExtResource("1_q1vfs")
+weapon_name = "Shotgun"
+display_text = "SHOTGUN"
+weapon_visual_scene = ExtResource("2_ga4yj")
+metadata/_custom_type_script = "uid://077mjeqbs562"

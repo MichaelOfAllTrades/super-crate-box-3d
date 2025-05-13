@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6lne1qfgtsc6"]
+
+[ext_resource type="PackedScene" uid="uid://bpsq8dr0dh6cu" path="res://weapons/weapon_visual.tscn" id="1_xa8ch"]
+[ext_resource type="Script" uid="uid://ciwq0id7voyeo" path="res://weapons/minigun/MinigunWeapon.gd" id="2_sgrsi"]
+[ext_resource type="PackedScene" uid="uid://cdeiblgklose" path="res://weapons/bullet.tscn" id="3_f1ufr"]
+
+[node name="WeaponVisual" instance=ExtResource("1_xa8ch")]
+
+[node name="WeaponLogic" parent="." index="3"]
+script = ExtResource("2_sgrsi")
+bullet_scene = ExtResource("3_f1ufr")
+fire_rate = 0.03
+must_reclick = false

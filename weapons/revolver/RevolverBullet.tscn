@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvyfnsrga4rq7"]
+
+[ext_resource type="Script" uid="uid://hnvqohso7h61" path="res://weapons/revolver/revolver_bullet.gd" id="1_6mi1n"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_viy4f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6mi1n"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_satsb"]
+material = SubResource("StandardMaterial3D_6mi1n")
+radius = 1.0
+height = 2.0
+
+[node name="RevolverBullet" type="Area3D"]
+collision_layer = 16
+collision_mask = 5
+script = ExtResource("1_6mi1n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_viy4f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_satsb")

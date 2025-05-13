@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwu78f73ja1hs"]
+
+[ext_resource type="Script" uid="uid://blje4op5x24d3" path="res://weapons/explosion.gd" id="1_q7epf"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vxas0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j4sxf"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_m5xho"]
+material = SubResource("StandardMaterial3D_j4sxf")
+
+[node name="Explosion" type="Area3D"]
+collision_layer = 16
+collision_mask = 5
+script = ExtResource("1_q7epf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_vxas0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_m5xho")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://ch73x4g8g5ttj"]
+
+[ext_resource type="Script" uid="uid://077mjeqbs562" path="res://weapons/WeaponResource.gd" id="1_45u7g"]
+[ext_resource type="PackedScene" uid="uid://b6lne1qfgtsc6" path="res://weapons/minigun/minigun_visual.tscn" id="2_ad6e4"]
+
+[resource]
+script = ExtResource("1_45u7g")
+weapon_name = "Minigun"
+display_text = "MINIGUN"
+weapon_visual_scene = ExtResource("2_ad6e4")
+metadata/_custom_type_script = "uid://077mjeqbs562"

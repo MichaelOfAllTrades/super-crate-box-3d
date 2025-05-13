@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://lnupnvsmpthi"]
+
+[ext_resource type="Script" uid="uid://077mjeqbs562" path="res://weapons/WeaponResource.gd" id="1_5s821"]
+[ext_resource type="PackedScene" uid="uid://ckk6rb23mbv6s" path="res://weapons/revolver/revolver_visual.tscn" id="2_xt725"]
+
+[resource]
+script = ExtResource("1_5s821")
+weapon_name = "Revolver"
+display_text = "REVOLVER"
+weapon_visual_scene = ExtResource("2_xt725")
+metadata/_custom_type_script = "uid://077mjeqbs562"

@@ -1,0 +1,68 @@
+[gd_scene load_steps=17 format=3 uid="uid://oiiig0w6lp31"]
+
+[ext_resource type="Script" uid="uid://c212sqid7mnhp" path="res://player/player2.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://077mjeqbs562" path="res://weapons/WeaponResource.gd" id="2_g1dw6"]
+[ext_resource type="Resource" uid="uid://1sksd3wbocj5" path="res://weapons/pistol/pistol.tres" id="3_yw30f"]
+[ext_resource type="Resource" uid="uid://dqjy252wrvbf" path="res://weapons/dual pistol/dual_pistol.tres" id="4_g6k8r"]
+[ext_resource type="PackedScene" uid="uid://cgqyvknjtvkxb" path="res://hud/hud.tscn" id="5_g6k8r"]
+[ext_resource type="Script" uid="uid://2ed2xqcghar2" path="res://scene_to_json.gd" id="5_qjkh3"]
+[ext_resource type="Resource" uid="uid://ptqfyl2ix3rj" path="res://weapons/machine gun/machine_gun.tres" id="5_rgyib"]
+[ext_resource type="Resource" uid="uid://ch73x4g8g5ttj" path="res://weapons/minigun/minigun.tres" id="6_hg6s5"]
+[ext_resource type="Resource" uid="uid://lnupnvsmpthi" path="res://weapons/revolver/revolver.tres" id="7_hg6s5"]
+[ext_resource type="Resource" uid="uid://6sh4q3tsfrl6" path="res://weapons/shotgun/shotgun.tres" id="8_8t03j"]
+[ext_resource type="Resource" uid="uid://ctkvjmm0wht3v" path="res://weapons/bazooka/bazooka.tres" id="9_2ieo8"]
+[ext_resource type="Resource" uid="uid://d5rtrya2i4ai" path="res://weapons/lazer rifle/lazer_rifle.tres" id="10_ebec5"]
+[ext_resource type="Resource" uid="uid://dob76206d038g" path="res://weapons/mine/mine.tres" id="11_yllr7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flbx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 37
+script = ExtResource("1_4flbx")
+jump_velocity = 500.0
+sensitivity = 0.001
+weapon_resources = Array[ExtResource("2_g1dw6")]([ExtResource("3_yw30f"), ExtResource("4_g6k8r"), ExtResource("5_rgyib"), ExtResource("6_hg6s5"), ExtResource("7_hg6s5"), ExtResource("8_8t03j"), ExtResource("9_2ieo8"), ExtResource("10_ebec5"), ExtResource("11_yllr7")])
+rear_view_size = Vector2(80, 45)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_sh265")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 2, 0, 0, 0, 1.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_4flbx")
+mesh = SubResource("CapsuleMesh_onrkg")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45287, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+current = true
+far = 8000.0
+
+[node name="WeaponHolder" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.237912, 0, -0.218823)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("5_g6k8r")]
+
+[node name="RearViewContainer" type="SubViewportContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RearViewport" type="SubViewport" parent="CanvasLayer/RearViewContainer"]
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="RearCamera" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.45131, 0)
+
+[node name="Node3D" type="Node3D" parent="."]
+script = ExtResource("5_qjkh3")

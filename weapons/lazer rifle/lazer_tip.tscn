@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4j21rt2tiw8e"]
+
+[ext_resource type="PackedScene" uid="uid://pi2v3xqy5tpu" path="res://weapons/lazer rifle/lazer tip.glb" id="1_0l0ft"]
+[ext_resource type="Script" uid="uid://kmk38oyiqomh" path="res://weapons/lazer rifle/lazer_tip.gd" id="1_s5ra8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bedpr"]
+
+[node name="LazerTip" type="Area3D"]
+collision_layer = 16
+collision_mask = 5
+script = ExtResource("1_s5ra8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -6.55671e-08, 2, 0, -1.5, -8.74228e-08, 0, 0, -0.5)
+shape = SubResource("CylinderShape3D_bedpr")
+
+[node name="lazer tip" parent="." instance=ExtResource("1_0l0ft")]

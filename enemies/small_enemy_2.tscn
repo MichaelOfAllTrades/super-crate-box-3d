@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhh0o5mmu4f24"]
+
+[ext_resource type="Script" uid="uid://2jqpkgsd1fv1" path="res://enemies/small_enemy_2.gd" id="1_vqakf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jg5p8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqakf"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nvjwb"]
+material = SubResource("StandardMaterial3D_vqakf")
+
+[node name="small_enemy_2" type="CharacterBody3D"]
+disable_mode = 1
+collision_layer = 4
+collision_mask = 49
+motion_mode = 1
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_block_on_wall = false
+floor_max_angle = 0.0
+script = ExtResource("1_vqakf")
+gravity_acceleration = 38.325
+terminal_velocity = 105.505
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_jg5p8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_nvjwb")

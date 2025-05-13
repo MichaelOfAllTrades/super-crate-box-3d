@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2ikm0d3rcaa2"]
+
+[ext_resource type="Script" uid="uid://dskdepfbiay0j" path="res://weapons/bazooka/bazooka_bullet.gd" id="1_1ris8"]
+[ext_resource type="PackedScene" uid="uid://dwu78f73ja1hs" path="res://weapons/explosion.tscn" id="2_pjp8q"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_pjp8q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esjqc"]
+albedo_color = Color(0.752941, 0.752941, 0.752941, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pt58g"]
+material = SubResource("StandardMaterial3D_esjqc")
+
+[node name="Node3D" type="Area3D"]
+collision_layer = 16
+collision_mask = 5
+script = ExtResource("1_1ris8")
+explosion_scene = ExtResource("2_pjp8q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_pjp8q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_pt58g")

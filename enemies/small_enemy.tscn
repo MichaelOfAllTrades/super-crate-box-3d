@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dha6a68x0jloo"]
+
+[ext_resource type="PackedScene" uid="uid://bykyjeeviabej" path="res://enemies/enemy_base.tscn" id="1_35gl2"]
+
+[node name="Enemy" instance=ExtResource("1_35gl2")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+speed = 60.0

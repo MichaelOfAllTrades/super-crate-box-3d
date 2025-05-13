@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://eslqnrfbhvyy"]
+
+[ext_resource type="Script" uid="uid://b87qrblgw4vm1" path="res://weapons/mine/mine_deployed.gd" id="1_juwjc"]
+[ext_resource type="PackedScene" uid="uid://dwu78f73ja1hs" path="res://weapons/explosion.tscn" id="2_3koqv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3koqv"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_akqqr"]
+
+[node name="MineDeployed" type="Area3D"]
+script = ExtResource("1_juwjc")
+explosion_scene = ExtResource("2_3koqv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.15, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("CylinderShape3D_3koqv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.15, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_akqqr")
+
+[node name="Timer" type="Timer" parent="."]

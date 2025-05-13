@@ -1,0 +1,61 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgcrepbtv7hjt"]
+
+[ext_resource type="Script" uid="uid://dwbe482x61a8c" path="res://world.gd" id="1_036b0"]
+[ext_resource type="PackedScene" uid="uid://cmowfqswv1mwa" path="res://reference.tscn" id="1_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://bss7arnahqsml" path="res://wall/wall.tscn" id="2_wse8f"]
+[ext_resource type="PackedScene" uid="uid://oiiig0w6lp31" path="res://player/player.tscn" id="3_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://xo5xsxlpcnst" path="res://crate/crate_spawn.tscn" id="4_ic0uy"]
+[ext_resource type="Script" uid="uid://c3d22w1luxgpx" path="res://enemies/enemy_spawner.gd" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://dhh0o5mmu4f24" path="res://enemies/small_enemy_2.tscn" id="5_dwbse"]
+[ext_resource type="PackedScene" uid="uid://cl52r4mhxwlad" path="res://enemies/big_enemy_2.tscn" id="6_dwbse"]
+[ext_resource type="Script" uid="uid://camx2kygok3n3" path="res://crate/crate_spawner.gd" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://bfaos2jci8wwu" path="res://crate/crate.tscn" id="8_gbfbk"]
+
+[sub_resource type="Environment" id="Environment_fj7yv"]
+background_color = Color(0.117647, 0.478431, 0.635294, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gbfbk"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_036b0")
+wall_scene = ExtResource("2_wse8f")
+crate_scene = ExtResource("8_gbfbk")
+crate_spawn_scene = ExtResource("4_ic0uy")
+
+[node name="Crate" parent="." instance=ExtResource("8_gbfbk")]
+
+[node name="Player" parent="." instance=ExtResource("3_pkg7o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.5861, 10.1531, 32.5213)
+fly_speed = 100.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.843251, 0.53752, 0, -0.53752, 0.843251, -3.41407, 16.0369, 21.6257)
+shadow_enabled = true
+
+[node name="reference" parent="." instance=ExtResource("1_aqk2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0100875, 0.0353827, 0.0434229)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fj7yv")
+
+[node name="EnemySpawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.5786, 0)
+script = ExtResource("5_036b0")
+small_enemy_scene = ExtResource("5_dwbse")
+big_enemy_scene = ExtResource("6_dwbse")
+
+[node name="GroupTimer" type="Timer" parent="EnemySpawner"]
+
+[node name="SmallGroupTimer" type="Timer" parent="EnemySpawner"]
+
+[node name="Node3D" type="Node3D" parent="."]
+script = ExtResource("7_pkg7o")
+crate_scene = ExtResource("8_gbfbk")
+
+[node name="Node3D2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -161.259, 37.7024, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D2"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("BoxMesh_gbfbk")

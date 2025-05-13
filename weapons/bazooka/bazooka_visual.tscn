@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://jks7pl5614ja"]
+
+[ext_resource type="PackedScene" uid="uid://bpsq8dr0dh6cu" path="res://weapons/weapon_visual.tscn" id="1_h87cr"]
+[ext_resource type="Script" uid="uid://bfaw1i42770ov" path="res://weapons/bazooka/BazookaWeapon.gd" id="2_5blml"]
+[ext_resource type="PackedScene" uid="uid://c2ikm0d3rcaa2" path="res://weapons/bazooka/bazooka_bullet.tscn" id="3_40ky1"]
+
+[node name="WeaponVisual" instance=ExtResource("1_h87cr")]
+
+[node name="WeaponLogic" parent="." index="3"]
+script = ExtResource("2_5blml")
+bullet_scene = ExtResource("3_40ky1")
+fire_rate = 1.0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://1sksd3wbocj5"]
+
+[ext_resource type="Script" uid="uid://077mjeqbs562" path="res://weapons/WeaponResource.gd" id="1_6u0yd"]
+[ext_resource type="PackedScene" uid="uid://cxai66ya3sfrh" path="res://weapons/pistol/pistol_visual.tscn" id="2_52pn7"]
+
+[resource]
+script = ExtResource("1_6u0yd")
+weapon_name = "Pistol"
+display_text = "PISTOL"
+weapon_visual_scene = ExtResource("2_52pn7")
+metadata/_custom_type_script = "uid://077mjeqbs562"

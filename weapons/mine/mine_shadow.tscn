@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm7sqamxnqav6"]
+
+[ext_resource type="Script" uid="uid://dp3clyrew655n" path="res://weapons/mine/mine_shadow.gd" id="1_sa1jq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h16qr"]
+transparency = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_h16qr"]
+material = SubResource("StandardMaterial3D_h16qr")
+
+[node name="MineShadow" type="Node3D"]
+script = ExtResource("1_sa1jq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.15, 0, 0, 0, 1, 0, 0, 0)
+transparency = 0.9
+mesh = SubResource("CylinderMesh_h16qr")

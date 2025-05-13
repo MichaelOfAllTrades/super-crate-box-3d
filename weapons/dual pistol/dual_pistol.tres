@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponResource" load_steps=3 format=3 uid="uid://dqjy252wrvbf"]
+
+[ext_resource type="Script" uid="uid://077mjeqbs562" path="res://weapons/WeaponResource.gd" id="1_m8ruq"]
+[ext_resource type="PackedScene" uid="uid://bpfqlafyjsqnn" path="res://weapons/dual pistol/dual_pistol_visual.tscn" id="2_1hq1n"]
+
+[resource]
+script = ExtResource("1_m8ruq")
+weapon_name = "Dual Pistol"
+display_text = "DUAL PISTOL"
+weapon_visual_scene = ExtResource("2_1hq1n")
+metadata/_custom_type_script = "uid://077mjeqbs562"
